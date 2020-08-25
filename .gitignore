@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 node_modules/
 build/
-=======
->>>>>>> f86549b6175dc4afc24d7524e9301e047b9b64a8
 npm-debug.log
 .env
 .DS_Store
