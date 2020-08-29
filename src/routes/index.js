@@ -20,9 +20,14 @@ router.get('/', (req, res) => {
     //res.send('received!');
 
     banco.ref('contatos').once('value', (snapshot) => {
-        const dbresult = snapshot.val();
-        res.render('index', {listacontatos: dbresult });
+        const resultset = snapshot.val();
+
+        console.log(resultset); //debug
+        
+        res.render('index', {listacontatos: resultset });
     });
+
+
 
 });
 
@@ -31,8 +36,8 @@ router.post('/new-contact', (req, res) => {
     
     const novoContato = {
         phone: req.body.phone,
-        firstName: req.body.firstname,
-        lastName: req.body.lastname,
+        firstname: req.body.firstname,
+        lastname: req.body.lastname,
         email: req.body.email
     }
 
@@ -40,9 +45,9 @@ router.post('/new-contact', (req, res) => {
 
     banco.ref('contatos').push(novoContato);
 
-    res.send('received, ok!');
+    //res.send('received, ok!');
 
-    //res.send(req.body);
+    res.redirect('/');
 });
 
 router.get('/teste', (req, res) => {
