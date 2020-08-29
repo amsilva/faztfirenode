@@ -3,10 +3,17 @@
 <div class="col-md-6 offset-md-3">
     <div class="card">
         <div class="card-header">
-            <h1>Nuevas Tareas</h1>
+            <h1>Nuevo</h1>
         </div>
         <div class="card-body">
-            Testing
+            Rellenar con tus datos
+            {{#if contact}}
+                <h1>Mís amigos</h1>
+            {{else}}
+                <p>No contact yet. It's empty!</p>
+            {{/if}}
+
+
         </div>
         <div class="card-footer">
             <form action="/new-contact" method="POST">
@@ -14,7 +21,7 @@
                     <input type="text" name="firstname" placeholder="ponga tu nombre, pincha de tu madre" class="form-control" autofocus>
                     <input type="text" name="lastname" placeholder="tu lastname" class="form-control" >
                     <input type="text" name="email" placeholder="email" class="form-control" >
-                    <input type="text" name="contacto" placeholder="y el contacto" class="form-control" >
+                    <input type="text" name="phone" placeholder="y el contacto" class="form-control" >
                     <button class="btn btn-primary btn-block">Añadir</button>
                 </div>
             </form>
